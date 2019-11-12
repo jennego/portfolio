@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import ResponsiveDialog from '../components/modal.js'
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,6 +62,7 @@ export default function Album() {
     return (
 
                 <Container className={classes.cardGrid} maxWidth="md">
+                    <ResponsiveDialog></ResponsiveDialog>
                     {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map(card => (
