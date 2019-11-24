@@ -9,9 +9,12 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import ResponsiveDialog from '../components/modal.js'
 
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const useStyles = makeStyles(theme => ({
     icon: {
@@ -56,19 +59,30 @@ const useStyles = makeStyles(theme => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+
 export default function Album() {
+    const [open, setOpen] = React.useState(false);
+    
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    
+    const handleClose = () => {
+        setOpen(false);
+    };
     const classes = useStyles();
 
     return (
-
+        <div>
                 <Container className={classes.cardGrid} maxWidth="md">
-                    <ResponsiveDialog></ResponsiveDialog>
+        
+            
                     {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map(card => (
                             <Grid item key={card} xs={12} sm={6} md={4}>
                                 <Card className={classes.card}>
-                                        <CardActionArea>
+                                    <CardActionArea onClick={handleClickOpen}>
                                             <CardMedia
                                                 className={classes.cardMedia}
                                                 alt="image"
@@ -93,9 +107,32 @@ export default function Album() {
                                         </CardActions>
                                 </Card>
                             </Grid>
+                            <div>
+                            <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                maxWidth={md}
+                                fullWidth={true}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">{"blah blah blah?"}</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        Item text
+                        </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={handleClose} color="primary">
+                                        close
+                            </Button>
+                                </DialogActions>
+                            </Dialog>
+                            </div>
                         ))}
                     </Grid>
                 </Container>
+    </div>
 
     );
 }
