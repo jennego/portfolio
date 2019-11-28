@@ -73,66 +73,63 @@ export default function Album() {
     const classes = useStyles();
 
     return (
-        <div>
-                <Container className={classes.cardGrid} maxWidth="md">
-        
-            
-                    {/* End hero unit */}
-                    <Grid container spacing={4}>
-                        {cards.map(card => (
-                            <Grid item key={card} xs={12} sm={6} md={4}>
-                                <Card className={classes.card}>
-                                    <CardActionArea onClick={handleClickOpen}>
-                                            <CardMedia
-                                                className={classes.cardMedia}
-                                                alt="image"
-                                                image="https://source.unsplash.com/random"
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h5" component="h2">
-                                                    Project
-                                                </Typography>
-                                                <Typography variant="body2" color="textSecondary" component="p">
-                                                    Hi
-                                                </Typography>
-                                            </CardContent>
-                                        </CardActionArea>
-                                        <CardActions>
-                                            <Button size="small" color="primary">
-                                                Site
-                                            </Button>
-                                            <Button size="small" color="primary">
-                                                Github
-                                            </Button>
-                                        </CardActions>
-                                </Card>
-                            </Grid>
-                            <div>
-                            <Dialog
-                                open={open}
-                                onClose={handleClose}
-                                maxWidth={md}
-                                fullWidth={true}
-                                aria-labelledby="alert-dialog-title"
-                                aria-describedby="alert-dialog-description"
-                            >
-                                <DialogTitle id="alert-dialog-title">{"blah blah blah?"}</DialogTitle>
-                                <DialogContent>
-                                    <DialogContentText id="alert-dialog-description">
-                                        Item text
+      <Container className={classes.cardGrid} maxWidth="md">
+        {/* End hero unit */}
+        <Grid container spacing={4}>
+          {cards.map(card => (
+            <Grid item key={card} xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardActionArea onClick={handleClickOpen}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    alt="image"
+                    image="https://source.unsplash.com/random"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Project
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Hi
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Site
+                  </Button>
+                  <Button size="small" color="primary">
+                    Github
+                  </Button>
+                </CardActions>
+              </Card>
+                    <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">
+                        {"blah blah blah?"}
+                        </DialogTitle>
+                        <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            Item text
                         </DialogContentText>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button onClick={handleClose} color="primary">
-                                        close
-                            </Button>
-                                </DialogActions>
-                            </Dialog>
-                            </div>
-                        ))}
-                    </Grid>
-                </Container>
-    </div>
-
-    );
+                        </DialogContent>
+                        <DialogActions>
+                        <Button onClick={handleClose} color="primary">
+                            close
+                        </Button>
+                        </DialogActions>
+                    </Dialog>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    )
 }
