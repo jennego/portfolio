@@ -16,6 +16,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import { useStaticQuery, graphql } from "gatsby"
+
+
 const useStyles = makeStyles(theme => ({
     icon: {
         marginRight: theme.spacing(2),
@@ -57,10 +60,18 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-
-export default function Album() {
+const Album = () => {
+const data = useStaticQuery(graphql`
+  {
+    allContentfulPortfolio {
+      nodes {
+        shortDescription
+        name
+      }
+    }
+  }
+`)
     const [open, setOpen] = React.useState(false);
     
     const handleClickOpen = () => {
@@ -72,11 +83,15 @@ export default function Album() {
     };
     const classes = useStyles();
 
+    const items = data.allContentfulPortfolio.nodes
+
+
+
     return (
       <Container className={classes.cardGrid} maxWidth="md">
         {/* End hero unit */}
         <Grid container spacing={4}>
-          {cards.map(card => (
+          {items.map(card => (
             <Grid item key={card} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
                 <CardActionArea onClick={handleClickOpen}>
@@ -87,14 +102,14 @@ export default function Album() {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Project
+                      {card.name}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="textSecondary"
                       component="p"
                     >
-                      Hi
+                      {card.shortDescription}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -132,4 +147,7 @@ export default function Album() {
         </Grid>
       </Container>
     )
-}
+  }
+
+
+export default Album

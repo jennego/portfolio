@@ -7,16 +7,13 @@ import Portfolio from "../sections/portfolio"
 import Slider from "../sections/slider"
 import '../components/layout.css'
 import Intro from "../sections/intro"
-import Query from './query'
 
 
 
 const IndexPage = () => {
 
-
   return(
     <Layout>
-      <Query></Query>
       <SEO title="Home" />
       <Slider></Slider>
       <Intro></Intro>
