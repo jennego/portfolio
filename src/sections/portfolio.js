@@ -66,6 +66,7 @@ const data = useStaticQuery(graphql`
   {
     allContentfulPortfolio {
       nodes {
+        id
         shortDescription
         name
       }
@@ -92,7 +93,7 @@ const data = useStaticQuery(graphql`
         {/* End hero unit */}
         <Grid container spacing={4}>
           {items.map(card => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+            <Grid item key={card.id} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
                 <CardActionArea onClick={handleClickOpen}>
                   <CardMedia
@@ -129,7 +130,7 @@ const data = useStaticQuery(graphql`
                         aria-describedby="alert-dialog-description"
                     >
                         <DialogTitle id="alert-dialog-title">
-                        {"blah blah blah?"}
+                        {`${card.name}`}
                         </DialogTitle>
                         <DialogContent>
                         <DialogContentText id="alert-dialog-description">
