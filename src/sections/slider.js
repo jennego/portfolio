@@ -32,7 +32,7 @@ const slider = () => (
                 Web Developer
             </Typography>
         </div>
-        <div class="scroll-down"> <a href="#"><ExpandMoreIcon fontSize={'large'}/></a> </div> 
+        <div className="scroll-down"> <a href="#"><ExpandMoreIcon fontSize={'large'}/></a> </div> 
     </div>
 )
 
