@@ -65,35 +65,50 @@ const Album = () => {
 const data = useStaticQuery(graphql`
   {
     allContentfulPortfolio {
-      nodes {
-        id
-        shortDescription
-        name
+      edges {
+        node {
+          childContentfulPortfolioLongDescriptionTextNode {
+            longDescription
+              childMarkdownRemark {
+              html
+            }
+          }
+          name
+          shortDescription
+          projectDate
+          projectUrl
+          categories
+          mainPhoto {
+            file {
+              url
+            }
+          }
+        }
       }
     }
   }
 `)
-    const [open, setOpen] = React.useState(false);
-    
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-    
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const classes = useStyles();
 
-    const items = data.allContentfulPortfolio.nodes
+const [open, setOpen] = React.useState(false);
 
+const handleClickOpen = () => {
+  setOpen(true);
+};
 
+const handleClose = () => {
+  setOpen(false);
+};
+const classes = useStyles();
+
+const items = data.allContentfulPortfolio.edges
 
     return (
       <Container className={classes.cardGrid} maxWidth="md">
         {/* End hero unit */}
+        {console.log(items)}
         <Grid container spacing={4}>
           {items.map(card => (
-            <Grid item key={card.id} xs={12} sm={6} md={4}>
+            <Grid item key={card.node.id} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
                 <CardActionArea onClick={handleClickOpen}>
                   <CardMedia
@@ -103,14 +118,14 @@ const data = useStaticQuery(graphql`
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {card.name}
+                      {card.node.name}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="textSecondary"
                       component="p"
                     >
-                      {card.shortDescription}
+                      {card.node.shortDescription}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -123,26 +138,28 @@ const data = useStaticQuery(graphql`
                   </Button>
                 </CardActions>
               </Card>
-                    <Dialog
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                        {`${card.name}`}
-                        </DialogTitle>
-                        <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                            Item text
-                        </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                        <Button onClick={handleClose} color="primary">
-                            close
-                        </Button>
-                        </DialogActions>
-                    </Dialog>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  {`${card.node.name}`}
+                </DialogTitle>
+                <DialogContent>
+                  {card.shortDescription}
+                  {/* <DialogContentText id="alert-dialog-description">
+                    {card.node.childContentfulPortfolioLongDescriptionTextNode == null ? card.node.shortDescription :
+                    card.node.childContentfulPortfolioLongDescriptionTextNode.longDescription }
+                  </DialogContentText> */}
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose} color="primary">
+                    close
+                  </Button>
+                </DialogActions>
+              </Dialog>
             </Grid>
           ))}
         </Grid>
