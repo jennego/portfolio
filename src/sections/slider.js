@@ -19,7 +19,7 @@ const slider = () => (
             fillParent={true}
             className="slideshow"            
         >
-            <div>1</div>
+            <div data-src='//images.ctfassets.net/x6htxs5f4ve9/6LViDbNfXdUuQ2VV8OO0Y2/1b69b4bbc523fcd881bb83be397fb2f1/64487263_10206114563779406_1165633585600790528_o.jpg'>1</div>
             <div data-src={`${vancouver}`}></div>
             <div>3</div>
  
