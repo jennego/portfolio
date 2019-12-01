@@ -75,6 +75,7 @@ const Album = () => {
               }
             }
             name
+            id
             shortDescription
             projectDate
             projectUrl
@@ -158,15 +159,21 @@ const handleClickOpen = (current) => {
               onClose={handleClose}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
+              fullWidth={true}
+              maxWidth={"md"}
             >
               <DialogTitle id="alert-dialog-title">
                 {`${items[selectedItem].node.name}`}
               </DialogTitle>
               <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    {items[selectedItem].node.childContentfulPortfolioLongDescriptionTextNode == null ? items[selectedItem].node.shortDescription :
-                    items[selectedItem].node.childContentfulPortfolioLongDescriptionTextNode.longDescription }
-                  </DialogContentText>
+                  {items[selectedItem].node
+                    .childContentfulPortfolioLongDescriptionTextNode == null
+                    ? items[selectedItem].node.shortDescription
+                    : items[selectedItem].node
+                        .childContentfulPortfolioLongDescriptionTextNode
+                        .longDescription}
+                </DialogContentText>
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose} color="primary">
