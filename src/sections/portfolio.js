@@ -114,6 +114,7 @@ const handleClickOpen = (current) => {
 
   return (
     <Container className={classes.cardGrid} maxWidth="md">
+      <Typography variant="h3">Portfolio</Typography>
       {/* End hero unit */}
       {console.log(items)}
       <Grid container spacing={4}>
