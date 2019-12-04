@@ -60,10 +60,9 @@ const Slider = () => {
         </Typography>
       </div>
       <div className="scroll-down">
-        {" "}
         <a href="#">
           <ExpandMoreIcon fontSize={"large"} />
-        </a>{" "}
+        </a>
       </div>
     </div>
   )

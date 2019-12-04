@@ -108,12 +108,10 @@ const handleClickOpen = (current) => {
   const items = data.allContentfulPortfolio.edges
 
    
-   const sayHello = (name) => {
-    console.log(`hello, ${name}`)
-  }
 
   return (
-    <Container className={classes.cardGrid} maxWidth="md">
+    <section id="portfolio">
+    <Container className={classes.cardGrid} maxWidth="lg">
       <Typography variant="h3">Portfolio</Typography>
       {/* End hero unit */}
       {console.log(items)}
@@ -123,13 +121,13 @@ const handleClickOpen = (current) => {
             <Card className={classes.card}>
               <CardActionArea
                 onClick={() => handleClickOpen(`${items.indexOf(card)}`)}
-              >
+                >
                 {items.indexOf(card)}
                 <CardMedia
                   className={classes.cardMedia}
                   alt="image"
                   image="https://source.unsplash.com/random"
-                />
+                  />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {card.node.name}
@@ -138,7 +136,7 @@ const handleClickOpen = (current) => {
                     variant="body2"
                     color="textSecondary"
                     component="p"
-                  >
+                    >
                     {card.node.shortDescription}
                   </Typography>
                 </CardContent>
@@ -150,9 +148,6 @@ const handleClickOpen = (current) => {
                 <Button size="small" color="primary">
                   Github
                 </Button>
-                <Button onClick={() => sayHello(`${card.node.name}`)}>
-                  Greet
-                </Button>
               </CardActions>
             </Card>
             <Dialog
@@ -162,7 +157,7 @@ const handleClickOpen = (current) => {
               aria-describedby="alert-dialog-description"
               fullWidth={true}
               maxWidth={"md"}
-            >
+              >
               <DialogTitle id="alert-dialog-title">
                 {`${items[selectedItem].node.name}`}
               </DialogTitle>
@@ -186,6 +181,7 @@ const handleClickOpen = (current) => {
         ))}
       </Grid>
     </Container>
+  </section>
   )
 }
 

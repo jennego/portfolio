@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container"
 
 
 const Intro = () => (
+    <section id="intro">
     <div style={{padding:'13px 15px', marginTop: '5em'}}>
     <Container>
     <Typography >
@@ -13,6 +14,7 @@ const Intro = () => (
     </Typography>
     </Container>
     </div>
+  </section>
 )
 
 export default Intro
