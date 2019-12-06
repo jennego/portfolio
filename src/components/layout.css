@@ -1,3 +1,27 @@
+  .icon {
+    margin-right: 2;
+  }
+
+  .cardGrid {
+    padding-top: 8;
+    padding-bottom:8;
+  }
+  
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+  }
+
+  .cardMedia {
+    padding-top: 56.25% ;
+  } 
+
+  .cardContent {
+    flex-grow: 1;
+  }
+
 .horiz-menu a {
   color:white;
   text-decoration: none;
@@ -10,6 +34,7 @@
 .menu-surface {
   display: flex;
   justify-content: flex-end;
+  height: 20px;
 }
 .horiz-menu {
 display: flex;
@@ -21,7 +46,12 @@ display: flex;
 
 .scroll-down {
   text-align: center;
-  margin-top:500px;
+  margin-top:400px;
+}
+
+section {
+margin-top: 40px;
+margin-bottom: 40px;
 }
 
 .title {
@@ -37,6 +67,14 @@ body, html {
   margin: 0;
 }
 
+body {
+    background: rgba(42, 8, 97,0.8); 
+  color: white;
+}
+
+a, a:visited {
+  color: lavender;
+}
 
 
 @media only screen and (max-width: 480px) {

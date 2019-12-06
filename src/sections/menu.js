@@ -9,8 +9,8 @@ import { Link } from 'gatsby'
 const Nav = () => {
 
 return (
-  <AppBar position="fixed">
-    <Toolbar className="menu-surface">
+  <AppBar position="fixed" style={{ background: "rgba(42, 8, 97,0.8)" }}>
+    <Toolbar variant="dense" className="menu-surface">
       <Typography variant="body1">
         <div>
           <Scrollspy

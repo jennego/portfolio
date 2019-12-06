@@ -21,44 +21,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 
 const useStyles = makeStyles(theme => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    border: "2px solid gray",
 
-    transform: "perspective(1px) translateZ(0)",
-    boxShadow: "0 0 1px rgba(0, 0, 0, 0)",
-    transitionDuration: "0.3s",
-    transitionProperty: "transform",
-    "&:hover": {
-      transform: "scale(1.1) rotate(4deg)",
-    },
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
 }))
 
 
@@ -111,77 +74,78 @@ const handleClickOpen = (current) => {
 
   return (
     <section id="portfolio">
-    <Container className={classes.cardGrid} maxWidth="lg">
-      <Typography variant="h3">Portfolio</Typography>
-      {/* End hero unit */}
-      {console.log(items)}
-      <Grid container spacing={4}>
-        {items.map(card => (
-          <Grid item key={card.node.id} xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardActionArea
-                onClick={() => handleClickOpen(`${items.indexOf(card)}`)}
+      <Container className="cardGrid" maxWidth="lg">
+        <Typography variant="h3">Portfolio</Typography>
+        {/* End hero unit */}
+        {console.log(items)}
+        <Grid container spacing={4}>
+          {items.map(card => (
+            <Grid item key={card.node.id} xs={12} sm={6} md={4}>
+              <Card className="card">
+                <CardActionArea
+                  onClick={() => handleClickOpen(`${items.indexOf(card)}`)}
                 >
-                {items.indexOf(card)}
-                <CardMedia
-                  className={classes.cardMedia}
-                  alt="image"
-                  image="https://source.unsplash.com/random"
+                  <CardMedia
+                    className="cardMedia"
+                    alt="image"
+                    image="https://source.unsplash.com/random"
                   />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {card.node.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {card.node.name}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
                     >
-                    {card.node.shortDescription}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Site
-                </Button>
-                <Button size="small" color="primary">
-                  Github
-                </Button>
-              </CardActions>
-            </Card>
-            <Dialog
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="alert-dialog-title"
-              aria-describedby="alert-dialog-description"
-              fullWidth={true}
-              maxWidth={"md"}
+                      {card.node.shortDescription}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <i class="fas fa-globe fa-lg fa-fw"></i>
+                    Site
+                  </Button>
+                  <Button size="small" color="primary">
+                    <i class="fab fa-github-square fa-lg fa-fw"></i>
+                    Github
+                  </Button>
+                </CardActions>
+              </Card>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                fullWidth={true}
+                maxWidth={"md"}
               >
-              <DialogTitle id="alert-dialog-title">
-                {`${items[selectedItem].node.name}`}
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText id="alert-dialog-description">
-                  {items[selectedItem].node
-                    .childContentfulPortfolioLongDescriptionTextNode == null
-                    ? items[selectedItem].node.shortDescription
-                    : items[selectedItem].node
-                        .childContentfulPortfolioLongDescriptionTextNode
-                        .longDescription}
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} color="primary">
-                  close
-                </Button>
-              </DialogActions>
-            </Dialog>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
-  </section>
+                <DialogTitle id="alert-dialog-title">
+                  {`${items[selectedItem].node.name}`}
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                    {items[selectedItem].node
+                      .childContentfulPortfolioLongDescriptionTextNode == null
+                      ? items[selectedItem].node.shortDescription
+                      : items[selectedItem].node
+                          .childContentfulPortfolioLongDescriptionTextNode
+                          .longDescription}
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose} color="primary">
+                    close
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </section>
   )
 }
 
