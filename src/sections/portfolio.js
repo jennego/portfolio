@@ -16,6 +16,8 @@ import DialogActions from "@material-ui/core/DialogActions"
 import DialogContent from "@material-ui/core/DialogContent"
 import DialogContentText from "@material-ui/core/DialogContentText"
 import DialogTitle from "@material-ui/core/DialogTitle"
+import IconButton from "@material-ui/core/IconButton"
+import CloseIcon from '@material-ui/icons/Close';
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -30,6 +32,14 @@ const Album = () => {
     {
       allContentfulPortfolio {
         edges {
+          previous {
+            id
+            name
+          }
+          next {
+            id
+            name
+          }
           node {
             childContentfulPortfolioLongDescriptionTextNode {
               longDescription
@@ -62,6 +72,16 @@ const handleClickOpen = (current) => {
     setSelectedItem(current)
     console.log(current)
   }
+
+  const handleNext = (current) => {
+     setSelectedItem(parseInt(current) + 1)
+       console.log(selectedItem)
+  }
+
+  const handlePrev = (current) => {
+      setSelectedItem(parseInt(current) - 1)
+         console.log(selectedItem)
+  }
   
   const handleClose = () => {
     setOpen(false)
@@ -76,6 +96,7 @@ const handleClickOpen = (current) => {
     <section id="portfolio">
       <Container className="cardGrid" maxWidth="lg">
         <Typography variant="h3">Portfolio</Typography>
+        {items[0].previous}
         {/* End hero unit */}
         {console.log(items)}
         <Grid container spacing={4}>
@@ -122,13 +143,20 @@ const handleClickOpen = (current) => {
                 fullWidth={true}
                 maxWidth={"md"}
               >
+                <IconButton
+                  aria-label="close"
+                  className="close-button"
+                  onClick={handleClose}
+                >
+                  <CloseIcon />
+                </IconButton>
                 <DialogTitle id="alert-dialog-title">
                   {`${items[selectedItem].node.name}`}
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id="alert-dialog-description">
                     {items[selectedItem].node
-                      .childContentfulPortfolioLongDescriptionTextNode == null
+                      .childContentfulPortfolioLongDescriptionTextNode === null
                       ? items[selectedItem].node.shortDescription
                       : items[selectedItem].node
                           .childContentfulPortfolioLongDescriptionTextNode
@@ -136,9 +164,29 @@ const handleClickOpen = (current) => {
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleClose} color="primary">
+                  {items[selectedItem].previous === null ? (
+                    <Button disabled={true}> Previous Item </Button>
+                  ) : (
+                    <Button onClick={() => handlePrev(`${selectedItem}`)}>
+                      Previous Item
+                    </Button>
+                  )}
+
+                  <Button
+                    onClick={handleClose}
+                    className="bottom-close"
+                    color="primary"
+                  >
                     close
                   </Button>
+
+                  {items[selectedItem].next === null ? (
+                    <Button disabled={true}> Next Item </Button>
+                  ) : (
+                    <Button onClick={() => handleNext(`${selectedItem}`)}>
+                      Next Item
+                    </Button>
+                  )}
                 </DialogActions>
               </Dialog>
             </Grid>
