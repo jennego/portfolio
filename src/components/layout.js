@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 
+
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -21,6 +23,11 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]', {offset: 0})
+  }
 
   return (
     <>

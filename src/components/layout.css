@@ -42,9 +42,14 @@
   color:white;
   text-decoration: none;
 }
-.is-current a:visited, .is-current a {
+
+.horiz-menu a:hover {
+  text-decoration: underlinenp;
+}
+
+ .is-current a, .is-current a:hover, .is-current a:visited {
   background: skyblue;
-  padding: 3px;
+  padding: 2px 7px;
 } 
 
 .menu-surface {
@@ -66,8 +71,8 @@ display: flex;
 }
 
 section {
-margin-top: 40px;
-margin-bottom: 40px;
+padding-top: 60px;
+padding-bottom: 20px;
 }
 
 .title {

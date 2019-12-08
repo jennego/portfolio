@@ -1,10 +1,16 @@
-Personal one page portfolio page made with Gastby/React, Material UI, Contentful CMS and Netify 😀🦄
+Personal one page portfolio page made with Gatsby/React, Material UI, Contentful CMS and Netify 😀🦄
 
-##To Do
-1. Add menu and scroll spy/scroll to anchor  
-2. Complete rest of portfolio dialog 
+***************
+
+## To Do
+~~1. Add menu and scroll spy/scroll to anchor~~  
+
+2. Complete rest of portfolio dialog  
+
 3. Add more styling (background, portfolio)
+
 4. Add better read more to header slide, fix GraphQL and remove default starter things
+
 5. Complete rest of site content (about, etc)
 6. Add real content 
 7. More styling. Maybe move all JSX styling into CSS files. Animation?  
