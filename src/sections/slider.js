@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import AwesomeSlider from "react-awesome-slider"
+import "react-awesome-slider/dist/styles.css"
 import withAutoplay from "react-awesome-slider/dist/autoplay"
 import Typography from "@material-ui/core/typography"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
-import "react-awesome-slider/dist/styles.css"
 
 
 const AutoplaySlider = withAutoplay(AwesomeSlider)
@@ -60,7 +60,7 @@ const Slider = () => {
         </Typography>
       </div>
       <div className="scroll-down">
-        <a href="#">
+        <a href="/#portfolio">
           <ExpandMoreIcon fontSize={"large"} />
         </a>
       </div>

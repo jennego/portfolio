@@ -19,6 +19,9 @@ import DialogTitle from "@material-ui/core/DialogTitle"
 import IconButton from "@material-ui/core/IconButton"
 import CloseIcon from '@material-ui/icons/Close';
 
+import AwesomeSlider from "react-awesome-slider"
+import "react-awesome-slider/dist/styles.css"
+
 import { useStaticQuery, graphql } from "gatsby"
 
 
@@ -32,31 +35,33 @@ const Album = () => {
     {
       allContentfulPortfolio {
         edges {
-          previous {
-            id
-            name
-          }
           next {
-            id
             name
           }
           node {
-            childContentfulPortfolioLongDescriptionTextNode {
-              longDescription
+            name
+            projectDate(formatString: "MMMM DD YYYY")
+            shortDescription
+            projectUrl
+            githubUrl
+            longDescription {
               childMarkdownRemark {
                 html
               }
             }
-            name
-            id
-            shortDescription
-            projectDate
-            projectUrl
-            categories
             mainPhoto {
               file {
                 url
               }
+              title
+              description
+            }
+            gallery {
+              file {
+                url
+              }
+              description
+              title
             }
           }
         }
@@ -155,13 +160,20 @@ const handleClickOpen = (current) => {
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id="alert-dialog-description">
-                    {items[selectedItem].node
-                      .childContentfulPortfolioLongDescriptionTextNode === null
+                    {items[selectedItem].node.longDescription === null
                       ? items[selectedItem].node.shortDescription
-                      : items[selectedItem].node
-                          .childContentfulPortfolioLongDescriptionTextNode
-                          .longDescription}
+                      : items[selectedItem].node.longDescription
+                          .childMarkdownRemark.html}
                   </DialogContentText>
+                      {items[selectedItem].node.gallery === null
+                        ? 'meh nothing'
+                        : <AwesomeSlider>
+                         {items[selectedItem].node.gallery.map(image =>
+                    <div key={image.id} data-src={image.file.url}> </div>
+                      )}
+                      </AwesomeSlider>
+                    }
+    
                 </DialogContent>
                 <DialogActions>
                   {items[selectedItem].previous === null ? (
