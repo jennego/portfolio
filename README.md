@@ -5,7 +5,7 @@ Personal one page portfolio page made with Gatsby/React, Material UI, Contentful
 ## To Do
 ~~1. Add menu and scroll spy/scroll to anchor~~  
 
-2. Complete rest of portfolio dialog  
+2. Complete rest of portfolio dialog 
 
 3. Add more styling (background, portfolio)
 

@@ -88,6 +88,10 @@ body, html {
   margin: 0;
 }
 
+footer {
+  text-align: center;
+}
+
 body {
     background: rgba(42, 8, 97,0.8); 
   color: white;

@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+import Typography from '@material-ui/core/Typography'
 
 
 
@@ -40,10 +41,13 @@ const Layout = ({ children }) => {
         </Helmet>
         <main>{children}</main>
         <footer>
+          <Typography variant="body2">
+
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>, React, ContenfulCMS,
           Material UI and 🦄. Okay, maybe not the unicorn.
+          </Typography>
         </footer>
       </div>
     </>
