@@ -114,7 +114,7 @@ const handleClickOpen = (current) => {
                   <CardMedia
                     className="cardMedia"
                     alt="image"
-                    image="https://source.unsplash.com/random"
+                    image={card.node.mainPhoto.file.url}
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -159,6 +159,9 @@ const handleClickOpen = (current) => {
                   {`${items[selectedItem].node.name}`}
                 </DialogTitle>
                 <DialogContent>
+                <DialogContentText id="project-date">
+                  {items[selectedItem].node.projectDate}
+                  </DialogContentText> 
                   <DialogContentText id="alert-dialog-description">
                     {items[selectedItem].node.longDescription === null
                       ? items[selectedItem].node.shortDescription
@@ -166,7 +169,7 @@ const handleClickOpen = (current) => {
                           .childMarkdownRemark.html}
                   </DialogContentText>
                       {items[selectedItem].node.gallery === null
-                        ? 'meh nothing'
+                        ? <img width="500px" src={card.node.mainPhoto.file.url}></img>
                         : <AwesomeSlider>
                          {items[selectedItem].node.gallery.map(image =>
                     <div key={image.id} data-src={image.file.url}> </div>
