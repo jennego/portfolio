@@ -3,17 +3,18 @@ import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
+import SocialMedia from './social-media'
 
 const Contact = () => (
   <section id="contact">
-    <Container>
+      <Container>
       <Typography variant="h3">Contact</Typography>
+    <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
       <form
         id="contact-form"
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
         }}
         name="contact"
         method="post"
@@ -21,7 +22,7 @@ const Contact = () => (
         data-netlify-honeypot="bot-field"
       >
         {/* You still need to add the hidden input with the form name to your JSX form */}
-        <input type="hidden" name="form-name" value="contact" />>
+        <input type="hidden" name="form-name" value="contact" />
         <TextField
           label="Name"
           name="name"
@@ -59,7 +60,8 @@ const Contact = () => (
           Send Message
         </Button>
       </form>
-      <Typography>Some sort of form here Social media here</Typography>
+      </div>
+      <SocialMedia></SocialMedia>
     </Container>
   </section>
 )
