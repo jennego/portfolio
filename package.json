@@ -24,6 +24,7 @@
     "react-awesome-slider": "^2.2.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+    "react-responsive-image": "^5.0.0",
     "react-scrollspy": "^3.4.2",
     "smooth-scroll": "^16.1.0"
   },

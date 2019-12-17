@@ -8,20 +8,40 @@ import '../components/layout.css'
 import Intro from "../sections/intro"
 import About from "../sections/about"
 import Nav from "../sections/menu"
+import Contact from '../sections/contact'
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+
+
+const dark = createMuiTheme({
+  palette: {
+    type: "dark", // Switching the dark mode on is a single property value change.
+  },
+})
+
+const light = createMuiTheme({
+  palette: {
+    type: "light", // Switching the dark mode on is a single property value change.
+  },
+})
 
 
 const IndexPage = () => {
 
   return(
+
+       <MuiThemeProvider theme={dark}> 
     <Layout>
       <Nav></Nav>
       <SEO title="Home" />
       <Slider></Slider>
       <Intro></Intro>
-      <Portfolio></Portfolio>
+        <MuiThemeProvider theme={light}> 
+        <Portfolio></Portfolio>
+        </MuiThemeProvider>
       <About></About>
-
-    </Layout>
+      <Contact></Contact>
+      </Layout>
+      </MuiThemeProvider>
   )
   }
 

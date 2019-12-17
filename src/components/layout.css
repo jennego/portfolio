@@ -1,3 +1,30 @@
+form {
+  max-width: 600px;
+  padding-bottom: 60px;
+}
+
+
+
+form .MuiInputBase-root {
+  margin: 6px 5px;
+}
+input, textarea {
+  margin:5px;
+}
+
+.item-links {
+ display: block;
+ text-align: right;
+     margin-right: 30px;
+    margin-top: -40px;
+} 
+
+.date {
+  font-size: 85%;
+  text-align: right;
+  font-style: italic;
+}
+
   .close-button {
      position: flex;
      width: 50px;
@@ -38,13 +65,13 @@
     flex-grow: 1;
   }
 
-.horiz-menu a {
+.horiz-menu a, .horiz-menu a:visited {
   color:white;
   text-decoration: none;
 }
 
 .horiz-menu a:hover {
-  text-decoration: underlinenp;
+  text-decoration: underline;
 }
 
  .is-current a, .is-current a:hover, .is-current a:visited {
@@ -98,7 +125,7 @@ body {
 }
 
 a, a:visited {
-  color: lavender;
+  color:rgba(66,145,223,1);
 }
 
 

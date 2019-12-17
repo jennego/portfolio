@@ -19,6 +19,7 @@ import DialogTitle from "@material-ui/core/DialogTitle"
 import IconButton from "@material-ui/core/IconButton"
 import CloseIcon from '@material-ui/icons/Close';
 
+
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 
@@ -130,14 +131,22 @@ const handleClickOpen = (current) => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
-                    <i class="fas fa-globe fa-lg fa-fw"></i>
-                    Site
-                  </Button>
-                  <Button size="small" color="primary">
-                    <i class="fab fa-github-square fa-lg fa-fw"></i>
-                    Github
-                  </Button>
+                  {card.node.projectUrl === null ? (
+                    ""
+                  ) : (
+                    <Button size="small" color="primary">
+                      <i class="fas fa-globe fa-lg fa-fw"></i>
+                      Site
+                    </Button>
+                  )}
+                  {card.node.githubUrl === null ? (
+                    ""
+                  ) : (
+                    <Button size="small" color="primary">
+                      <i class="fab fa-github-square fa-lg fa-fw"></i>
+                      Github
+                    </Button>
+                  )}
                 </CardActions>
               </Card>
               <Dialog
@@ -157,26 +166,62 @@ const handleClickOpen = (current) => {
                 </IconButton>
                 <DialogTitle id="alert-dialog-title">
                   {`${items[selectedItem].node.name}`}
+
+                  <div className="item-links">
+                    {items[selectedItem].node.projectUrl === null ? (
+                      ""
+                    ) : (
+                      <Button size="small" color="primary">
+                        <i class="fas fa-globe fa-2x fa-fw"></i>
+                        Site
+                      </Button>
+                    )}
+                    {items[selectedItem].node.githubUrl === null ? (
+                      ""
+                    ) : (
+                      <Button size="small" color="primary">
+                        <i class="fab fa-github-square fa-2x fa-fw"></i>
+                        Github
+                      </Button>
+                    )}
+                  </div>
                 </DialogTitle>
                 <DialogContent>
-                <DialogContentText id="project-date">
-                  {items[selectedItem].node.projectDate}
-                  </DialogContentText> 
-                  <DialogContentText id="alert-dialog-description">
-                    {items[selectedItem].node.longDescription === null
-                      ? items[selectedItem].node.shortDescription
-                      : items[selectedItem].node.longDescription
-                          .childMarkdownRemark.html}
+                  <DialogContentText id="project-date">
+                    <div className="date">
+                      {items[selectedItem].node.projectDate === null
+                        ? "Ongoing Project"
+                        : "Completed on " +
+                          `${items[selectedItem].node.projectDate}`}
+                    </div>
                   </DialogContentText>
-                      {items[selectedItem].node.gallery === null
-                        ? <img width="500px" src={card.node.mainPhoto.file.url}></img>
-                        : <AwesomeSlider>
-                         {items[selectedItem].node.gallery.map(image =>
-                    <div key={image.id} data-src={image.file.url}> </div>
-                      )}
-                      </AwesomeSlider>
-                    }
-    
+
+                  <DialogContentText id="alert-dialog-description">
+                    {items[selectedItem].node.longDescription === null ? (
+                      items[selectedItem].node.shortDescription
+                    ) : (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `${items[selectedItem].node.longDescription.childMarkdownRemark.html}`,
+                        }}
+                      ></div>
+                    )}
+                  </DialogContentText>
+                  {items[selectedItem].node.gallery === null ? (
+                    <AwesomeSlider bullets={false} organicArrows={false}>
+                      <div
+                        data-src={items[selectedItem].node.mainPhoto.file.url}
+                      />
+                    </AwesomeSlider>
+                  ) : (
+                    <AwesomeSlider>
+                      {items[selectedItem].node.gallery.map(image => (
+                        <div key={image.id} data-src={image.file.url}>
+                          {" "}
+                        </div>
+                      ))}
+                    </AwesomeSlider>
+                  )}
                 </DialogContent>
                 <DialogActions>
                   {items[selectedItem].previous === null ? (
