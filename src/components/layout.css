@@ -9,7 +9,6 @@ form {
 }
 
 
-
 form .MuiInputBase-root {
   margin: 6px 5px;
 }
@@ -18,11 +17,11 @@ input, textarea {
 }
 
 .item-links {
- display: block;
+  display: block;
  text-align: right;
      margin-right: 30px;
-    margin-top: -40px;
-} 
+     margin-top: -40px;
+    } 
 
 .date {
   font-size: 85%;
@@ -30,7 +29,7 @@ input, textarea {
   font-style: italic;
 }
 
-  .close-button {
+.close-button {
      position: flex;
      width: 50px;
      align-self: flex-end;
@@ -38,9 +37,9 @@ input, textarea {
     top: 1;
   }
 
- .MuiDialogActions-root {
+  .MuiDialogActions-root {
    justify-content: space-between !important;
- }
+  }
 
   #alert-dialog-title {
     margin-top: -50px;
@@ -49,7 +48,7 @@ input, textarea {
   .icon {
     margin-right: 2;
   }
-
+  
   .cardGrid {
     padding-top: 8;
     padding-bottom:8;
@@ -61,7 +60,7 @@ input, textarea {
     flex-direction: column;
     border: 2px solid gray;
   }
-
+  
   .cardMedia {
     padding-top: 56.25% ;
   } 
@@ -70,8 +69,8 @@ input, textarea {
     flex-grow: 1;
   }
 
-.horiz-menu a, .horiz-menu a:visited {
-  color:white;
+  .horiz-menu a, .horiz-menu a:visited {
+    color:white;
   text-decoration: none;
 }
 
@@ -79,7 +78,7 @@ input, textarea {
   text-decoration: underline;
 }
 
- .is-current a, .is-current a:hover, .is-current a:visited {
+.is-current a, .is-current a:hover, .is-current a:visited {
   background: skyblue;
   padding: 2px 7px;
 } 
@@ -99,12 +98,20 @@ display: flex;
 
 .scroll-down {
   text-align: center;
+  padding: 1.5em;
   margin-top:400px;
+  color:white !important;
+}
+
+.scroll-down:hover {
+    margin-top:400px;
+    padding: 1.5em;
+    background:rgba(0,0,0, 0.3);
 }
 
 section {
-padding-top: 60px;
-padding-bottom: 20px;
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
 .title {
@@ -118,6 +125,7 @@ padding-bottom: 20px;
 
 body, html {
   margin: 0;
+  padding:0;
 }
 
 footer {

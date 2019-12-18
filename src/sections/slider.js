@@ -59,11 +59,11 @@ const Slider = () => {
           Web Developer
         </Typography>
       </div>
-      <div className="scroll-down">
         <a href="/#portfolio">
-          <ExpandMoreIcon fontSize={"large"} />
-        </a>
+      <div className="scroll-down">
+         <i class="fas fa-chevron-circle-down fa-3x" ></i>
       </div>
+        </a>
     </div>
   )
 }

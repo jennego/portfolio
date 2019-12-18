@@ -15,7 +15,7 @@ return (
         <div>
           <Scrollspy
             className="horiz-menu"
-            items={["intro", "portfolio", "about"]}
+            items={["intro", "portfolio", "about", "contact"]}
             currentClassName="is-current"
           >
             <MenuItem>
@@ -31,7 +31,9 @@ return (
             <MenuItem>
               <Link to="#about"> About </Link>
             </MenuItem>
-            <MenuItem>Home</MenuItem>
+            <MenuItem>
+              <Link to="#contact"> Contact </Link>
+            </MenuItem>
           </Scrollspy>
         </div>
       </Typography>
