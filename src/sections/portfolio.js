@@ -63,6 +63,7 @@ const Album = () => {
               }
               description
               title
+              id
             }
           }
         }
@@ -135,7 +136,7 @@ const handleClickOpen = (current) => {
                     ""
                   ) : (
                     <Button size="small" color="primary">
-                      <i class="fas fa-globe fa-lg fa-fw"></i>
+                      <i className="fas fa-globe fa-lg fa-fw"></i>
                       Site
                     </Button>
                   )}
@@ -143,7 +144,7 @@ const handleClickOpen = (current) => {
                     ""
                   ) : (
                     <Button size="small" color="primary">
-                      <i class="fab fa-github-square fa-lg fa-fw"></i>
+                      <i className="fab fa-github-square fa-lg fa-fw"></i>
                       Github
                     </Button>
                   )}
@@ -172,7 +173,7 @@ const handleClickOpen = (current) => {
                       ""
                     ) : (
                       <Button size="small" color="primary">
-                        <i class="fas fa-globe fa-2x fa-fw"></i>
+                        <i className="fas fa-globe fa-2x fa-fw"></i>
                         Site
                       </Button>
                     )}
@@ -180,7 +181,7 @@ const handleClickOpen = (current) => {
                       ""
                     ) : (
                       <Button size="small" color="primary">
-                        <i class="fab fa-github-square fa-2x fa-fw"></i>
+                        <i className="fab fa-github-square fa-2x fa-fw"></i>
                         Github
                       </Button>
                     )}

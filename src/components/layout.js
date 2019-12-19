@@ -38,15 +38,18 @@ const Layout = ({ children }) => {
             src="https://kit.fontawesome.com/1ee357d2bb.js"
             crossorigin="anonymous"
           ></script>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
         </Helmet>
         <main>{children}</main>
         <footer>
           <Typography variant="body2">
-
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>, React, ContenfulCMS,
-          Material UI and 🦄. Okay, maybe not the unicorn.
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>, React, ContentfulCMS,
+            Material UI and 🦄. Okay, maybe not the unicorn.
           </Typography>
         </footer>
       </div>

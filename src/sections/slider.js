@@ -61,7 +61,7 @@ const Slider = () => {
       </div>
         <a href="/#portfolio">
       <div className="scroll-down">
-         <i class="fas fa-chevron-circle-down fa-3x" ></i>
+         <i className="fas fa-chevron-circle-down fa-3x" ></i>
       </div>
         </a>
     </div>

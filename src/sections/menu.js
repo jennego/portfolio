@@ -11,7 +11,6 @@ const Nav = () => {
 return (
   <AppBar position="fixed" style={{ background: "rgba(42, 8, 97,0.8)" }}>
     <Toolbar variant="dense" className="menu-surface">
-      <Typography variant="body1">
         <div>
           <Scrollspy
             className="horiz-menu"
@@ -36,7 +35,6 @@ return (
             </MenuItem>
           </Scrollspy>
         </div>
-      </Typography>
     </Toolbar>
   </AppBar>
 )}
