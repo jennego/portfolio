@@ -25,11 +25,11 @@ const About = () => {
       <Container>
         <Typography variant="h3">About</Typography>
         <Typography variant="body1" component="div">
-          <p
+          <div
             dangerouslySetInnerHTML={{
               __html: `${data.allContentfulSiteInfo.edges[0].node.aboutMe.childMarkdownRemark.html}`,
             }}
-          ></p>
+          ></div>
         </Typography>
       </Container>
     </section>

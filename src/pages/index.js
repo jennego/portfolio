@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import '../components/layout.css'
 import Portfolio from "../sections/portfolio"
 import Slider from "../sections/slider"
-import '../components/layout.css'
 import Intro from "../sections/intro"
 import About from "../sections/about"
 import Nav from "../sections/menu"
