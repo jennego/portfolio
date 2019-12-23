@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 import withAutoplay from "react-awesome-slider/dist/autoplay"
-import Typography from "@material-ui/core/typography"
+import Typography from "@material-ui/core/Typography"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
 
