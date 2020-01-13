@@ -26,7 +26,7 @@ const Intro = () => {
       <div style={{ padding: "13px 15px", marginTop: "5em" }}>
         <Container>
           <Typography variant="body1" component="div">
-            <div
+            <div style={{textAlign:'center'}}
               dangerouslySetInnerHTML={{
                 __html: `${data.allContentfulSiteInfo.edges[0].node.intro.childMarkdownRemark.html}`,
               }}

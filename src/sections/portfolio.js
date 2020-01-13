@@ -45,6 +45,7 @@ const Album = () => {
             shortDescription
             projectUrl
             githubUrl
+            categories
             longDescription {
               childMarkdownRemark {
                 html
@@ -208,6 +209,9 @@ const handleClickOpen = (current) => {
                       ></div>
                     )}
                   </DialogContentText>
+                  <Grid container spacing={3} >
+                    <Grid item sm>
+                    
                   {items[selectedItem].node.gallery === null ? (
                     <AwesomeSlider bullets={false} organicArrows={false}>
                       <div
@@ -223,6 +227,14 @@ const handleClickOpen = (current) => {
                       ))}
                     </AwesomeSlider>
                   )}
+                    </Grid>
+                    <Grid item sm={3}>
+                         <Typography gutterBottom variant="h5" component="h3">
+                           Skills
+                         </Typography>
+                    </Grid>
+                  </Grid>     
+
                 </DialogContent>
                 <DialogActions>
                   {items[selectedItem].previous === null ? (

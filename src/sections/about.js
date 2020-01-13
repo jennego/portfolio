@@ -25,7 +25,7 @@ const About = () => {
       <Container>
         <Typography variant="h3">About</Typography>
         <Typography variant="body1" component="div">
-          <div
+          <div 
             dangerouslySetInnerHTML={{
               __html: `${data.allContentfulSiteInfo.edges[0].node.aboutMe.childMarkdownRemark.html}`,
             }}
