@@ -209,32 +209,41 @@ const handleClickOpen = (current) => {
                       ></div>
                     )}
                   </DialogContentText>
-                  <Grid container spacing={3} >
+                  <Grid container spacing={3}>
                     <Grid item sm>
-                    
-                  {items[selectedItem].node.gallery === null ? (
-                    <AwesomeSlider bullets={false} organicArrows={false}>
-                      <div
-                        data-src={items[selectedItem].node.mainPhoto.file.url}
-                      />
-                    </AwesomeSlider>
-                  ) : (
-                    <AwesomeSlider>
-                      {items[selectedItem].node.gallery.map(image => (
-                        <div key={image.id} data-src={image.file.url}>
-                          {" "}
-                        </div>
-                      ))}
-                    </AwesomeSlider>
-                  )}
+                      {items[selectedItem].node.gallery === null ? (
+                        <AwesomeSlider bullets={false} organicArrows={false}>
+                          <div
+                            data-src={
+                              items[selectedItem].node.mainPhoto.file.url
+                            }
+                          />
+                        </AwesomeSlider>
+                      ) : (
+                        <AwesomeSlider>
+                          {items[selectedItem].node.gallery.map(image => (
+                            <div key={image.id} data-src={image.file.url}>
+                              {" "}
+                            </div>
+                          ))}
+                        </AwesomeSlider>
+                      )}
                     </Grid>
+                    {items[selectedItem].node.categories === null ? "" : 
                     <Grid item sm={3}>
-                         <Typography gutterBottom variant="h5" component="h3">
-                           Skills
-                         </Typography>
+                      <Typography gutterBottom variant="h5" component="h3">
+                        Skills and Tech
+                      </Typography>
+                      <Typography variant="body2">
+                        <ul>
+                          {items[selectedItem].node.categories.map(item => (
+                            <li>{item}</li>
+                          ))}
+                        </ul>
+                      </Typography>
                     </Grid>
-                  </Grid>     
-
+                    }
+                  </Grid>
                 </DialogContent>
                 <DialogActions>
                   {items[selectedItem].previous === null ? (
