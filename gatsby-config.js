@@ -1,14 +1,14 @@
 const dotenv = require("dotenv")
 
 if (process.env.ENVIROMENT !== "production") {
-  dotenv.config();
+  dotenv.config()
 }
 
 const { spaceId, accessToken } = process.env
 
 module.exports = {
   siteMetadata: {
-    title: `Jennifer Chow Portfolo`,
+    title: `Jennifer Chow Portfolio`,
     description: `From default starter to my first React/Gatsby portfolio.`,
     author: `Jennifer Chow`,
   },
