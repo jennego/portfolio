@@ -2,15 +2,15 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import '../components/layout.css'
+import "../components/layout.css"
 import Portfolio from "../sections/portfolio"
 import Slider from "../sections/slider"
 import Intro from "../sections/intro"
 import About from "../sections/about"
+import Instagram from "../sections/instagram"
 import Nav from "../sections/menu"
-import Contact from '../sections/contact'
+import Contact from "../sections/contact"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
-
 
 const dark = createMuiTheme({
   palette: {
@@ -24,27 +24,23 @@ const light = createMuiTheme({
   },
 })
 
-
 const IndexPage = () => {
-
-  return(
-
-       <MuiThemeProvider theme={dark}> 
-    <Layout>
-      <Nav></Nav>
-      <SEO title="Home" />
-      <Slider></Slider>
-      <Intro></Intro>
-        <MuiThemeProvider theme={light}> 
-        <Portfolio></Portfolio>
+  return (
+    <MuiThemeProvider theme={dark}>
+      <Layout>
+        <Nav></Nav>
+        <SEO title="Home" />
+        <Slider></Slider>
+        <Intro></Intro>
+        <MuiThemeProvider theme={light}>
+          <Portfolio></Portfolio>
         </MuiThemeProvider>
-      <About></About>
-      <Contact></Contact>
+        <About></About>
+        <Instagram></Instagram>
+        <Contact></Contact>
       </Layout>
-      </MuiThemeProvider>
+    </MuiThemeProvider>
   )
-  }
-
-
+}
 
 export default IndexPage
