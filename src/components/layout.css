@@ -1,27 +1,27 @@
 .social-media > a {
-  margin:10px;
-  text-decoration:none;
+  margin: 10px;
+  text-decoration: none;
 }
 
 form {
   padding-bottom: 60px;
- width: 80%;
+  width: 80%;
 }
-
 
 form .MuiInputBase-root {
   margin: 6px 5px;
 }
-input, textarea {
-  margin:5px;
+input,
+textarea {
+  margin: 5px;
 }
 
 .item-links {
   display: block;
- text-align: right;
-     margin-right: 30px;
-     margin-top: -40px;
-    } 
+  text-align: right;
+  margin-right: 30px;
+  margin-top: -40px;
+}
 
 .date {
   font-size: 85%;
@@ -30,47 +30,48 @@ input, textarea {
 }
 
 .close-button {
-     position: flex;
-     width: 50px;
-     align-self: flex-end;
-     right: 1;
-    top: 1;
-  }
+  position: flex;
+  width: 50px;
+  align-self: flex-end;
+  right: 1;
+  top: 1;
+}
 
-  .MuiDialogActions-root {
-   justify-content: space-between !important;
-  }
+.MuiDialogActions-root {
+  justify-content: space-between !important;
+}
 
-  #alert-dialog-title {
-    margin-top: -50px;
-  }
-  
-  .icon {
-    margin-right: 2;
-  }
-  
-  .cardGrid {
-    padding-top: 8;
-    padding-bottom:8;
-  }
-  
-  .card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid gray;
-  }
-  
-  .cardMedia {
-    padding-top: 56.25% ;
-  } 
+#alert-dialog-title {
+  margin-top: -50px;
+}
 
-  .cardContent {
-    flex-grow: 1;
-  }
+.icon {
+  margin-right: 2;
+}
 
-  .horiz-menu a, .horiz-menu a:visited {
-    color:white;
+.cardGrid {
+  padding-top: 8;
+  padding-bottom: 8;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gray;
+}
+
+.cardMedia {
+  padding-top: 56.25%;
+}
+
+.cardContent {
+  flex-grow: 1;
+}
+
+.horiz-menu a,
+.horiz-menu a:visited {
+  color: white;
   text-decoration: none;
 }
 
@@ -78,10 +79,12 @@ input, textarea {
   text-decoration: underline;
 }
 
-.is-current a, .is-current a:hover, .is-current a:visited {
+.is-current a,
+.is-current a:hover,
+.is-current a:visited {
   background: skyblue;
   padding: 2px 7px;
-} 
+}
 
 .menu-surface {
   display: flex;
@@ -89,7 +92,7 @@ input, textarea {
   height: 20px;
 }
 .horiz-menu {
-display: flex;
+  display: flex;
 }
 
 .slideshow {
@@ -99,14 +102,14 @@ display: flex;
 .scroll-down {
   text-align: center;
   padding: 1.5em;
-  margin-top:400px;
-  color:white !important;
+  margin-top: 400px;
+  color: white !important;
 }
 
 .scroll-down:hover {
-    margin-top:400px;
-    padding: 1.5em;
-    background:rgba(0,0,0, 0.3);
+  margin-top: 400px;
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 section {
@@ -115,21 +118,22 @@ section {
 }
 
 .text-center {
-  text-align:center;
+  text-align: center;
 }
 
 .title {
-  color:white;
+  color: white;
   background: rgba(0, 0, 0, 0.5);
-  display:inline-block;
+  display: inline-block;
   margin-top: 50px;
-  margin-left:20px;
+  margin-left: 20px;
   padding: 5px;
-} 
+}
 
-body, html {
+body,
+html {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
 footer {
@@ -137,18 +141,31 @@ footer {
 }
 
 body {
-    background: rgba(42, 8, 97,0.8); 
+  background: rgba(42, 8, 97, 0.8);
   color: white;
 }
 
-a, a:visited {
-  color:rgba(66,145,223,1);
+a,
+a:visited {
+  color: rgba(66, 145, 223, 1);
 }
 
 h3 {
-  padding-bottom:10px;
+  padding-bottom: 10px;
 }
 
+.insta {
+  max-width: 98.8vw;
+}
+
+.insta-pic {
+  height: 100%;
+  width: 100%;
+}
+
+a:hover .insta-pic {
+  opacity: 0.7;
+}
 
 @media only screen and (max-width: 480px) {
   html {

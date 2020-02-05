@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
-
+import Tooltip from "@material-ui/core/Tooltip"
 const Instagram = () => {
   const data = useStaticQuery(graphql`
     {
@@ -21,17 +21,34 @@ const Instagram = () => {
       }
     }
   `)
+
   return (
-    <div>
+    <div className="insta">
       <GridList cellHeight={150} cols={10}>
         {data.allInstaNode.edges.map(tile => (
-          <GridListTile>
-            <img src={tile.node.localFile.url} />
+          <GridListTile style={{ padding: 0 }}>
+            <Tooltip
+              title={
+                <span style={{ fontSize: "15px" }}> {tile.node.caption} </span>
+              }
+            >
+              <a
+                href={"https://instagram.com/p/" + `${tile.node.id}`}
+                target="_blank"
+              >
+                <img
+                  src={tile.node.localFile.url}
+                  key={tile.node.id}
+                  className="insta-pic"
+                />
+              </a>
+            </Tooltip>
           </GridListTile>
-          // <p>{tile.node.caption} </p>
         ))}
       </GridList>
-      <div style={{ textAlign: "right" }}>Instagram @thejennego </div>
+      <div style={{ textAlign: "right", color: "darkgrey" }}>
+        Instagram @thejennego{" "}
+      </div>
     </div>
   )
 }
