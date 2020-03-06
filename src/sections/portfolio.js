@@ -17,19 +17,14 @@ import DialogContent from "@material-ui/core/DialogContent"
 import DialogContentText from "@material-ui/core/DialogContentText"
 import DialogTitle from "@material-ui/core/DialogTitle"
 import IconButton from "@material-ui/core/IconButton"
-import CloseIcon from '@material-ui/icons/Close';
-
+import CloseIcon from "@material-ui/icons/Close"
 
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-
-const useStyles = makeStyles(theme => ({
-
-}))
-
+const useStyles = makeStyles(theme => ({}))
 
 const Album = () => {
   const data = useStaticQuery(graphql`
@@ -37,6 +32,9 @@ const Album = () => {
       allContentfulPortfolio {
         edges {
           next {
+            name
+          }
+          previous {
             name
           }
           node {
@@ -72,25 +70,25 @@ const Album = () => {
     }
   `)
 
-const [selectedItem, setSelectedItem] = useState(0)
-const [open, setOpen] = React.useState(false)
+  const [selectedItem, setSelectedItem] = useState(0)
+  const [open, setOpen] = React.useState(false)
 
-const handleClickOpen = (current) => {
+  const handleClickOpen = current => {
     setOpen(true)
     setSelectedItem(current)
     console.log(current)
   }
 
-  const handleNext = (current) => {
-     setSelectedItem(parseInt(current) + 1)
-       console.log(selectedItem)
+  const handleNext = current => {
+    setSelectedItem(parseInt(current) + 1)
+    console.log(selectedItem)
   }
 
-  const handlePrev = (current) => {
-      setSelectedItem(parseInt(current) - 1)
-         console.log(selectedItem)
+  const handlePrev = current => {
+    setSelectedItem(parseInt(current) - 1)
+    console.log(selectedItem)
   }
-  
+
   const handleClose = () => {
     setOpen(false)
   }
@@ -98,14 +96,10 @@ const handleClickOpen = (current) => {
 
   const items = data.allContentfulPortfolio.edges
 
-   
-
   return (
     <section id="portfolio">
       <Container className="cardGrid" maxWidth="lg">
         <Typography variant="h3">Portfolio</Typography>
-        {items[0].previous}
-        {/* End hero unit */}
         {console.log(items)}
         <Grid container spacing={4}>
           {items.map(card => (
@@ -229,24 +223,26 @@ const handleClickOpen = (current) => {
                         </AwesomeSlider>
                       )}
                     </Grid>
-                    {items[selectedItem].node.categories === null ? "" : 
-                    <Grid item sm={3}>
-                      <Typography gutterBottom variant="h5" component="h3">
-                        Skills and Tech
-                      </Typography>
-                      <Typography variant="body2">
-                        <ul>
-                          {items[selectedItem].node.categories.map(item => (
-                            <li>{item}</li>
-                          ))}
-                        </ul>
-                      </Typography>
-                    </Grid>
-                    }
+                    {items[selectedItem].node.categories === null ? (
+                      ""
+                    ) : (
+                      <Grid item sm={3}>
+                        <Typography gutterBottom variant="h5" component="h3">
+                          Skills and Tech
+                        </Typography>
+                        <Typography variant="body2">
+                          <ul>
+                            {items[selectedItem].node.categories.map(item => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                        </Typography>
+                      </Grid>
+                    )}
                   </Grid>
                 </DialogContent>
                 <DialogActions>
-                  {items[selectedItem].previous === null ? (
+                  {items[selectedItem].previous === null || undefined ? (
                     <Button disabled={true}> Previous Item </Button>
                   ) : (
                     <Button onClick={() => handlePrev(`${selectedItem}`)}>
@@ -262,7 +258,7 @@ const handleClickOpen = (current) => {
                     close
                   </Button>
 
-                  {items[selectedItem].next === null ? (
+                  {items[selectedItem].next === null || undefined ? (
                     <Button disabled={true}> Next Item </Button>
                   ) : (
                     <Button onClick={() => handleNext(`${selectedItem}`)}>
