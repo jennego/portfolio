@@ -130,7 +130,11 @@ const Album = () => {
                   {card.node.projectUrl === null ? (
                     ""
                   ) : (
-                    <Button size="small" color="primary">
+                    <Button
+                      size="small"
+                      color="primary"
+                      href={card.node.projectUrl}
+                    >
                       <i className="fas fa-globe fa-lg fa-fw"></i>
                       Site
                     </Button>
@@ -138,7 +142,11 @@ const Album = () => {
                   {card.node.githubUrl === null ? (
                     ""
                   ) : (
-                    <Button size="small" color="primary">
+                    <Button
+                      size="small"
+                      color="primary"
+                      href={card.node.githubUrl}
+                    >
                       <i className="fab fa-github-square fa-lg fa-fw"></i>
                       Github
                     </Button>
@@ -167,7 +175,11 @@ const Album = () => {
                     {items[selectedItem].node.projectUrl === null ? (
                       ""
                     ) : (
-                      <Button size="small" color="primary">
+                      <Button
+                        size="small"
+                        color="primary"
+                        href={items[selectedItem].node.projectUrl}
+                      >
                         <i className="fas fa-globe fa-2x fa-fw"></i>
                         Site
                       </Button>
@@ -175,7 +187,11 @@ const Album = () => {
                     {items[selectedItem].node.githubUrl === null ? (
                       ""
                     ) : (
-                      <Button size="small" color="primary">
+                      <Button
+                        size="small"
+                        color="primary"
+                        href={items[selectedItem].node.githubUrl}
+                      >
                         <i className="fab fa-github-square fa-2x fa-fw"></i>
                         Github
                       </Button>
