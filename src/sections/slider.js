@@ -6,7 +6,6 @@ import withAutoplay from "react-awesome-slider/dist/autoplay"
 import Typography from "@material-ui/core/Typography"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
-
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
 const Slider = () => {
@@ -33,7 +32,7 @@ const Slider = () => {
   return (
     <div
       className="main-slider"
-      style={{ display: "block", margin: "1em", height: "650px" }}
+      style={{ display: "block", margin: "1em", height: "100vh" }}
     >
       {console.log(photos)}
       <AutoplaySlider
@@ -43,27 +42,23 @@ const Slider = () => {
         fillParent={true}
         className="slideshow"
       >
-
-        {photos.map(image =>
-        <div key={image.id} data-src={image.file.url}> </div>
-          )}  
-
-      
+        {photos.map(image => (
+          <div key={image.id} data-src={image.file.url}>
+            {" "}
+          </div>
+        ))}
       </AutoplaySlider>
-  
-      <div className="title">
-        <Typography variant="h3" component="h1">
-          Jennifer Chow
-        </Typography>
-        <Typography variant="h4" component="h2">
-          Web Developer
-        </Typography>
+      <div className="slideshow-overlay">
+        <div className="site-heading">
+          <h1>Jennifer Chow</h1>
+          <div className="subheading">Web Developer</div>
+        </div>
       </div>
-        <a href="/#portfolio">
-      <div className="scroll-down">
-         <i className="fas fa-chevron-circle-down fa-3x" ></i>
-      </div>
-        </a>
+      <a href="/#portfolio">
+        <div className="scroll-down">
+          <i className="fas fa-chevron-circle-down fa-3x"></i>
+        </div>
+      </a>
     </div>
   )
 }
