@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 import withAutoplay from "react-awesome-slider/dist/autoplay"
-import Typography from "@material-ui/core/Typography"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import Grid from "@material-ui/core/Grid"
+import Container from "@material-ui/core/Container"
 
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
@@ -38,7 +38,7 @@ const Slider = () => {
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false} // should stop playing on user interaction
-        interval={3000}
+        interval={5000}
         fillParent={true}
         className="slideshow"
       >
@@ -49,9 +49,11 @@ const Slider = () => {
         ))}
       </AutoplaySlider>
       <div className="slideshow-overlay">
-        <div className="site-heading">
-          <h1>Jennifer Chow</h1>
-          <div className="subheading">Web Developer</div>
+        <div className="site-title">
+          <Container>
+            <h1 className="site-heading">Jennifer Chow</h1>
+            <h2 className="subheading">Web Developer</h2>
+          </Container>
         </div>
       </div>
       <a href="/#portfolio">

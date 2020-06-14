@@ -24,19 +24,32 @@ const light = createMuiTheme({
   },
 })
 
+const fonts = createMuiTheme({
+  typography: {
+    fontFamily: "Montserrat",
+    h3: {
+      fontFamily: "Amaranth",
+    },
+    h5: {
+      fontFamily: "Montserrat",
+      fontWeight: "bold",
+    },
+  },
+})
+
 const IndexPage = () => {
   return (
-    <MuiThemeProvider theme={dark}>
+    <MuiThemeProvider theme={dark} theme={fonts}>
       <Layout>
         <Nav></Nav>
         <SEO title="Home" />
         <Slider></Slider>
         <Intro></Intro>
-        <MuiThemeProvider theme={light}>
+        <MuiThemeProvider theme={light} theme={fonts}>
           <Portfolio></Portfolio>
         </MuiThemeProvider>
         <About></About>
-        <Instagram></Instagram>
+        {/* <Instagram></Instagram> */}
         <Contact></Contact>
       </Layout>
     </MuiThemeProvider>

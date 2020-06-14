@@ -119,7 +119,7 @@ const Album = () => {
                     </Typography>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      className="card-text"
                       component="p"
                     >
                       {card.node.shortDescription}
