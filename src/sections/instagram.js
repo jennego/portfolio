@@ -4,23 +4,23 @@ import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import Tooltip from "@material-ui/core/Tooltip"
 const Instagram = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allInstaNode(limit: 10) {
-        edges {
-          node {
-            localFile {
-              name
-              url
-              publicURL
-            }
-            caption
-            id
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     allInstaNode(limit: 10) {
+  //       edges {
+  //         node {
+  //           localFile {
+  //             name
+  //             url
+  //             publicURL
+  //           }
+  //           caption
+  //           id
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <div className="insta">
