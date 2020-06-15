@@ -42,10 +42,8 @@ h1.site-heading {
 }
 h2.subheading {
   z-index: 3;
-  color: cyan;
+  color: rgb(176, 232, 232);
   top: -18px;
-  z-index: 3;
-  color: cyan;
   font-size: 41px;
   line-height: -28px;
   margin-top: 0;
@@ -223,8 +221,8 @@ form {
   width: 80%;
 }
 
-form .MuiInputBase-root {
-  margin: 6px 5px;
+form {
+  margin: 6px 5px !important;
 }
 input,
 textarea {

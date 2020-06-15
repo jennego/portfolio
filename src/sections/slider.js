@@ -32,7 +32,7 @@ const Slider = () => {
   return (
     <div
       className="main-slider"
-      style={{ display: "block", margin: "1em", height: "100vh" }}
+      style={{ display: "block", margin: "1em", height: "5vh" }}
     >
       {console.log(photos)}
       <AutoplaySlider

@@ -50,7 +50,9 @@ const IndexPage = () => {
         </MuiThemeProvider>
         <About></About>
         {/* <Instagram></Instagram> */}
-        <Contact></Contact>
+        <MuiThemeProvider theme={dark}>
+          <Contact></Contact>
+        </MuiThemeProvider>
       </Layout>
     </MuiThemeProvider>
   )

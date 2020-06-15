@@ -56,15 +56,17 @@ const Contact = () => {
               label="Name"
               name="name"
               variant="outlined"
-              color={"skyblue"}
+              color={"cyan"}
               fullWidth={true}
+              style={{ marginBottom: "15px" }}
             />
             <TextField
               label="Email"
               name="email"
               variant="outlined"
-              color={"skyblue"}
+              color={"cyan"}
               fullWidth={true}
+              style={{ marginBottom: "15px" }}
             />
             <TextField
               name="message"
@@ -75,7 +77,8 @@ const Contact = () => {
               placeholder="Placeholder"
               variant="outlined"
               fullWidth={true}
-              color={"skyblue"}
+              color={"cyan"}
+              style={{ marginBottom: "15px" }}
             />
             <Button
               style={{ alignSelf: "center" }}
