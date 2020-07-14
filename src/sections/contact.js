@@ -50,7 +50,7 @@ const Contact = () => {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
-            <p class="hidden">
+            <p style={{ display: "hidden" }}>
               <label>
                 Don’t fill this out if you're human: <input name="bot-field" />
               </label>
