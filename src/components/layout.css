@@ -52,6 +52,12 @@ h2.subheading {
   font-style: italic;
   font-family: "Amaranth", sans-serif;
 }
+
+h1,
+h2,
+h3 {
+  font-family: "Amaranth", sans-serif !important;
+}
 /* 
 @media only screen and (max-width: 711px) {
   .site-heading {
@@ -216,17 +222,23 @@ a:hover .insta-pic {
   text-decoration: none;
 }
 
-form {
-  padding-bottom: 60px;
-  width: 80%;
+.social-media > a:hover {
+  color: skyblue;
 }
 
 form {
+  padding-bottom: 60px;
+  width: 80%;
   margin: 6px 5px !important;
 }
 input,
 textarea {
   margin: 5px;
+  color: white;
+}
+
+.MuiOutlinedInput-root {
+  color: white !important;
 }
 
 @media only screen and (max-width: 480px) {

@@ -8,6 +8,7 @@ import Slider from "../sections/slider"
 import Intro from "../sections/intro"
 import About from "../sections/about"
 import Instagram from "../sections/instagram"
+import Logo from "../sections/logo"
 import Nav from "../sections/menu"
 import Contact from "../sections/contact"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
@@ -43,15 +44,18 @@ const IndexPage = () => {
       <Layout>
         <Nav></Nav>
         <SEO title="Home" />
-        <Slider></Slider>
+        <Logo></Logo>
+        {/* <Slider></Slider> */}
         <Intro></Intro>
         <MuiThemeProvider theme={light} theme={fonts}>
           <Portfolio></Portfolio>
         </MuiThemeProvider>
-        <About></About>
-        {/* <Instagram></Instagram> */}
-        <MuiThemeProvider theme={dark}>
-          <Contact></Contact>
+        <MuiThemeProvider theme={dark} theme={fonts}>
+          <About></About>
+          {/* <Instagram></Instagram> */}
+          <MuiThemeProvider theme={dark}>
+            <Contact></Contact>
+          </MuiThemeProvider>
         </MuiThemeProvider>
       </Layout>
     </MuiThemeProvider>

@@ -21,6 +21,7 @@ import CloseIcon from "@material-ui/icons/Close"
 
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
+import { Fade } from "react-awesome-reveal"
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -99,60 +100,64 @@ const Album = () => {
   return (
     <section id="portfolio">
       <Container className="cardGrid" maxWidth="lg">
-        <Typography variant="h3">Portfolio</Typography>
+        <Fade left>
+          <Typography variant="h3">Portfolio</Typography>
+        </Fade>
         {console.log(items)}
         <Grid container spacing={4}>
           {items.map(card => (
             <Grid item key={card.node.id} xs={12} sm={6} md={4}>
-              <Card className="card">
-                <CardActionArea
-                  onClick={() => handleClickOpen(`${items.indexOf(card)}`)}
-                >
-                  <CardMedia
-                    className="cardMedia"
-                    alt="image"
-                    image={card.node.mainPhoto.file.url}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.node.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      className="card-text"
-                      component="p"
-                    >
-                      {card.node.shortDescription}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  {card.node.projectUrl === null ? (
-                    ""
-                  ) : (
-                    <Button
-                      size="small"
-                      color="primary"
-                      href={card.node.projectUrl}
-                    >
-                      <i className="fas fa-globe fa-lg fa-fw"></i>
-                      Site
-                    </Button>
-                  )}
-                  {card.node.githubUrl === null ? (
-                    ""
-                  ) : (
-                    <Button
-                      size="small"
-                      color="primary"
-                      href={card.node.githubUrl}
-                    >
-                      <i className="fab fa-github-square fa-lg fa-fw"></i>
-                      Github
-                    </Button>
-                  )}
-                </CardActions>
-              </Card>
+              <Fade cascade damping={1}>
+                <Card className="card">
+                  <CardActionArea
+                    onClick={() => handleClickOpen(`${items.indexOf(card)}`)}
+                  >
+                    <CardMedia
+                      className="cardMedia"
+                      alt="image"
+                      image={card.node.mainPhoto.file.url}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {card.node.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="card-text"
+                        component="p"
+                      >
+                        {card.node.shortDescription}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    {card.node.projectUrl === null ? (
+                      ""
+                    ) : (
+                      <Button
+                        size="small"
+                        color="primary"
+                        href={card.node.projectUrl}
+                      >
+                        <i className="fas fa-globe fa-lg fa-fw"></i>
+                        Site
+                      </Button>
+                    )}
+                    {card.node.githubUrl === null ? (
+                      ""
+                    ) : (
+                      <Button
+                        size="small"
+                        color="primary"
+                        href={card.node.githubUrl}
+                      >
+                        <i className="fab fa-github-square fa-lg fa-fw"></i>
+                        Github
+                      </Button>
+                    )}
+                  </CardActions>
+                </Card>
+              </Fade>
               <Dialog
                 open={open}
                 onClose={handleClose}

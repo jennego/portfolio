@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import SocialMedia from "./social-media"
 import { useStaticQuery, graphql } from "gatsby"
+import { Fade } from "react-awesome-reveal"
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -23,7 +24,9 @@ const Contact = () => {
   return (
     <section id="contact">
       <Container>
-        <Typography variant="h3">Contact</Typography>
+        <Fade left>
+          <Typography variant="h3">Contact</Typography>
+        </Fade>
         <Typography variant="body1" component="div">
           {console.log(data)}
           <div
@@ -60,7 +63,6 @@ const Contact = () => {
               label="Name"
               name="name"
               variant="outlined"
-              color={"cyan"}
               fullWidth={true}
               style={{ marginBottom: "15px" }}
             />
@@ -68,7 +70,6 @@ const Contact = () => {
               label="Email"
               name="email"
               variant="outlined"
-              color={"cyan"}
               fullWidth={true}
               style={{ marginBottom: "15px" }}
             />
@@ -81,7 +82,6 @@ const Contact = () => {
               placeholder="Placeholder"
               variant="outlined"
               fullWidth={true}
-              color={"cyan"}
               style={{ marginBottom: "15px" }}
             />
             <Button
