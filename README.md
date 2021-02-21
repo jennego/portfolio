@@ -4,12 +4,10 @@ Personal one page portfolio page made with Gatsby/React, Material UI, Contentful
 
 ## To Do
 
-1. Restyle header
-2. Change fonts
-3. Add scroll animation
-4. Restyle cards / add hover animation
-5. Somehow add arrows to popup
-6. Make fully mobile friendly
-   - do something about header
-   - do something about menu
-7. Style social media icons hover
+- REDESIGN 
+   - Colours: Dark purple, purples + figure out other colours 
+   - Animation (on scroll or not?)
+   - Interactive or animation design elements 
+   - Lazy loading
+   - Sketch out in Sketch BEDFORE coding Jen! 
+- add jennego-site 
