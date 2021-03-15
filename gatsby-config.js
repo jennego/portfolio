@@ -51,14 +51,9 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `thejennego`,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-image",
+    "postcss",
   ],
 }
